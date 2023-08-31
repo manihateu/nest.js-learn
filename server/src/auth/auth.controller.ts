@@ -14,7 +14,7 @@ import { JwtService } from '@nestjs/jwt';
 import { UsersService } from '../users/users.service';
 import { comparePassword } from '../utils/bcrypt';
 import { SignInDto } from './dto/SignIn.dto';
-import { SignUpDto } from './dto/SignUp.dto'; // Add the SignUpDto import
+import { SignUpDto } from './dto/SignUp.dto'; 
 
 @Controller('auth')
 export class AuthController {

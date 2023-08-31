@@ -9,13 +9,10 @@ export default class TypeOrmConfig {
   static getOrmConfig(config: ConfigService): TypeOrmModuleOptions {
     return {
       type: 'postgres',
-      host: config.get('DB_HOST'),
-      port: +config.get('DB_PORT'),
-      username: config.get('DB_USERNAME'),
-      password: config.get('DB_PASSWORD'),
-      database: config.get('DB_DATABASE'),
+      url: config.get('POSTGRES_URL'),
       entities: entities,
       synchronize: true,
+      ssl: true,
     };
   }
 }
