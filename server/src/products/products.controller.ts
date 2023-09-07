@@ -23,6 +23,7 @@ import { CreateProductsDto, fileName } from './dto/CreateProducts.dto';
 import { UpdateCoverDto } from './dto/UpdateCover.dto';
 import { UpdateProductDto } from './dto/UpdateProduct.dto';
 import { ProductsService } from './products.service';
+import { Categories } from './dto/Types';
 
 @Controller('products')
 export class ProductsController {
@@ -53,6 +54,11 @@ export class ProductsController {
   @UseGuards(JwtAuthGuard)
   async createProduct(@Body() createProductsDto: CreateProductsDto) {
     return await this.productsService.createProduct(createProductsDto);
+  }
+
+  @Get('categories')
+  async fetchCategories() {
+    return Object.values(Categories);
   }
 
   @Get(':imgPath')
