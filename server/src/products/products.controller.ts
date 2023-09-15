@@ -58,12 +58,12 @@ export class ProductsController {
 
   @Get('categories')
   async fetchCategories() {
-    return Object.values(Categories);
+    return {...Object.values(Categories)};
   }
 
   @Get('types')
   async fetchTypes() {
-    return Object.values(Types);
+    return {...Object.values(Types)};
   }
 
   @Get(':imgPath')
