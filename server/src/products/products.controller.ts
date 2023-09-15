@@ -23,7 +23,7 @@ import { CreateProductsDto, fileName } from './dto/CreateProducts.dto';
 import { UpdateCoverDto } from './dto/UpdateCover.dto';
 import { UpdateProductDto } from './dto/UpdateProduct.dto';
 import { ProductsService } from './products.service';
-import { Categories } from './dto/Types';
+import { Categories, Types } from './dto/Types';
 
 @Controller('products')
 export class ProductsController {
@@ -58,7 +58,12 @@ export class ProductsController {
 
   @Get('categories')
   async fetchCategories() {
-    return Object.values(Categories);
+    return Categories;
+  }
+
+  @Get('types')
+  async fetchTypes() {
+    return Types;
   }
 
   @Get(':imgPath')
