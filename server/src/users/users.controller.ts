@@ -34,7 +34,7 @@ export class UsersController {
   ) {}
 
   @Get()
-  @hasRoles(UserRole.SUPER_ADMIN, UserRole.ADMIN)
+  @hasRoles(UserRole.SUPER_ADMIN)
   @UseGuards(JwtAuthGuard, RolesGuard)
   @UseInterceptors(ClassSerializerInterceptor)
   async getUsers() {

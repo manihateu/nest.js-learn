@@ -31,8 +31,8 @@ export class OrdersCreateDto {
 
   @IsNotEmpty()
   @IsNumberString()
-  @MinLength(8)
-  @MaxLength(8)
+  @MinLength(11)
+  @MaxLength(12)
   telephone: string;
 
   @IsNotEmpty()

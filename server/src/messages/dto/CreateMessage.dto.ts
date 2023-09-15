@@ -18,7 +18,7 @@ export class CreateMessageDto {
 
   @IsNotEmpty()
   @MaxLength(400)
-  @MinLength(15)
+  @MinLength(1)
   message: string;
 
   createAt: Date;
