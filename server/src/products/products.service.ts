@@ -24,6 +24,18 @@ export class ProductsService {
     return await this.productsRepository.save(product);
   }
 
+  enumToObject(enumObj: any): Record<string, string> {
+    const obj: Record<string, string> = {};
+  
+    for (const key in enumObj) {
+      if (enumObj.hasOwnProperty(key)) {
+        obj[key] = enumObj[key];
+      }
+    }
+  
+    return obj;
+  }
+
   async fetchProducts() {
     return await this.productsRepository.find();
   }

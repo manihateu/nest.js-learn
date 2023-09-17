@@ -58,12 +58,12 @@ export class ProductsController {
 
   @Get('categories')
   async fetchCategories() {
-    return {...Object.values(Categories)};
+    return this.productsService.enumToObject(Categories);
   }
 
   @Get('types')
   async fetchTypes() {
-    return {...Object.values(Types)};
+    return this.productsService.enumToObject(Types);
   }
 
   @Get(':imgPath')
