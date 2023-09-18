@@ -8,6 +8,7 @@ import {
   Param,
   Post,
   Put,
+  Query,
   Res,
   UploadedFile,
   UseGuards,
@@ -109,8 +110,11 @@ export class ProductsController {
     return products;
   }
 
-  @Get(':type/:category')
-  async fetchByCategotyAndType(@Param('category') category: string, @Param('type') type: string) {
+  @Get("/allfilters")
+  async fetchByCategotyAndType(
+    @Query('category') category: string,
+    @Query('type') type: string
+  ) {
     const products = await this.productsService.find({ categories: category, types: type });
 
     if (!products[0]) {
